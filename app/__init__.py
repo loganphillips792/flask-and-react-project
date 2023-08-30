@@ -3,7 +3,7 @@ import os
 from logging.config import dictConfig
 from flask import Flask
 from dotenv import load_dotenv
-
+from flask_sqlalchemy import SQLAlchemy
 
 # def create_app():
 app = Flask(__name__)
@@ -26,8 +26,14 @@ dictConfig({
 
 load_dotenv()
 
-DATABASE_USER=os.environ.get('DATABASE_USERNAME')
+SQLALCHEMY_DATABASE_URI=os.environ.get('SQLALCHEMY_DATABASE_URI')
 
-print(f"database user is {DATABASE_USER}")
+db = SQLAlchemy()
+
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///project.db"
+
+print(f"database url for sqlalchemy is {SQLALCHEMY_DATABASE_URI}")
+
+db.init_app(app)
 
 from . import routes

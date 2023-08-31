@@ -15,7 +15,7 @@
 
 ## Running application
 
-Go to project root
-Create environment file (.env)
-Enable virtual environment
-python3 main.py
+1. Go to project root
+2. Create environment file (.env)
+3. Enable virtual environment
+4. python3 main.py

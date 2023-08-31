@@ -1,5 +1,7 @@
 # Running the frontend web app
 
+- The frontend web app is built using Vite, Typescript and React.
+
 1. ```npm install```
 2. ```npm run dev```
 
